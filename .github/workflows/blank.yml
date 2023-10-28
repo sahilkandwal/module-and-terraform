@@ -1,0 +1,33 @@
+provider
+
+provider "aws" {
+  region = "us-east-1"
+  access_key = "AKIA4HMSNABECRDR5J6N"
+  secret_key = "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"
+}
+.
+.
+.
+resource
+.
+resource "aws_s3_bucket" "bucket" {
+  bucket = "hello-saktiman-0001"
+
+  tags = {
+    Name        = "My bucket"
+  }
+}
+.
+.
+varibale
+.
+variable "bucket" {
+}
+.
+.
+slack - module
+.
+module "s3_bucket" {
+  source = "../module"
+  bucket = "hello-saktiman-0001"
+}
